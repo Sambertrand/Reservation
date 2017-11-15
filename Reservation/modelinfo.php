@@ -13,17 +13,17 @@ class info
 		$this->assurance = $assurance;
 	}
 
-	public function getDestination()
+	public function GetDestination()
 	{
 		return $this->destination;
 	}
 
-	public function getNumberPlaces()
+	public function GetNumberPlaces()
 	{
 		return $this->numberPlaces;
 	}
 
-	public function getassurance()
+	public function Getassurance()
 	{
 		settype($assurance , "integer");
 		return $this->assurance;
