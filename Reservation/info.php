@@ -1,5 +1,17 @@
-	<!DOCTYPE html>
-	<html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Réservation	
+	</title>
+</head>
+<body>
+	<h1>
+		<b>RESERVATION</b>
+	</h1>
+	<p>
+		We need the information of every person:
+	</p>
 	<p>
 		Person <?php echo $n?>
 	</p>
@@ -23,6 +35,7 @@
   		<br>
 	  	<input type="submit" value="Next step"/> 
 	   	<!-- <input type="submit" value="annuler la réservation"/> -->
-		<input type= "hidden"  name="page" value="ctrl_summary">
+		<input type= "hidden"  name="page" value="ctrl_info">
 	</form>
+</body>
 </html>

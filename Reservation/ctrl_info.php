@@ -1,17 +1,15 @@
 <?php
-$infos = unserialize($_SESSION['infos']);
-$destination = $_POST["Destination"];
-$numbrePlaces = $_POST["Number_of_Places"];
-$assurance =  !empty($_POST["Assurance"]);
-$infos->SetDestination($destination);
-$infos->SetNumbrePlaces($numbrePlaces);
-$infos->SetAssurance($assurance);
-include 'info_template.php';
+//Alors,  tu dois faire en sort que cette page fonctionne en revoyant summary quand tout les personnes sont crées.
+
+
 $n = 1;
-while ($n <= $numbrePlaces)
+if ($n <= )
 {
 	include 'info.php';
 	$n++;
 }
-
-	?>
+else
+{
+	include 'ctrl_summary';
+}
+?>

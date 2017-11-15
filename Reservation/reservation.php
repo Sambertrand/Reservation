@@ -42,7 +42,7 @@
   		<br>
 	  	<input type="submit" value="Next step"/> 
 	   	<!-- <input type="submit" value="annuler la réservation"/> -->
-		<input type= "hidden"  name="page" value="ctrl_info">
+		<input type= "hidden"  name="page" value="ctrl_reservation">
 	</form>
 </body>
 </html>
