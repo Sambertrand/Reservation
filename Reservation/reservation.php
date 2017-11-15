@@ -32,12 +32,11 @@
 			</TR>
 			<TR>
 				<TH>Numbre of places: </TH>
-				<TH> <input type="text" name="Number_of_Places" 
-					value=<?php echo $Places ?> </TH>
+				<TH> <input type="text" name="Number_of_Places"> </TH>
   			</TR>
   			<TR>
   				<TH> Cancellation assurance</TH>
-  				<TH> <input type="checkbox" name="Assurance" <?php echo $Ass ?> > </TH>
+  				<TH> <input type="checkbox" name="Assurance" <checked></TH>
   		</Table>
   		<br>
   		<br>

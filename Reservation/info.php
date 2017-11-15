@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html>
-il te reste à remplis cette page et mettre le contoleur convenablement pour avoir ce html n fois
-crée le modelpersonne 
-crée le controleur suivant avec les objets personnes crées
-crée la page suivante avec le résumé + confirmation
-controleur final
-page final
-annulations
+	<!DOCTYPE html>
+	<html>
+	<p>
+		Person <?php echo $n?>
+	</p>
+	<form action="index.php" method= "POST">  		
+  		<Table>
+  			<caption> Reservation form: </caption>
+  			<TR>
+  				<TH> First Name: </TH>
+  				<TH> <input type="text" name="First_Name"> </TH>
+			</TR>
+			<TR>
+  				<TH> Last Name: </TH>
+  				<TH> <input type="text" name="Last_Name"> </TH>
+			</TR>
+			<TR>
+				<TH>Age: </TH>
+				<TH> <input type="text" name="Age"> </TH>
+  			</TR>
+  		</Table>
+  		<br>
+  		<br>
+	  	<input type="submit" value="Next step"/> 
+	   	<!-- <input type="submit" value="annuler la réservation"/> -->
+		<input type= "hidden"  name="page" value="ctrl_summary">
+	</form>
 </html>

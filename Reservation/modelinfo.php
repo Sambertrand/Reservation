@@ -2,15 +2,15 @@
 
 class info
 {
-	private $destination = "";
-	private $numbrePlaces = 0;
-	private $assurance = false;
+	private $destination;
+	private $numbrePlaces;
+	private $assurance;
 
-	public function __construct($destination, $numberPlaces, $assurance)
+	public function __construct()
 	{
-		$this->destination = $destination;
-		$this->numberPlaces = $numberPlaces;
-		$this->assurance = $assurance;
+		$this->destination = "";
+		$this->numberPlaces = 0;
+		$this->assurance = "on";
 	}
 
 	public function GetDestination()
