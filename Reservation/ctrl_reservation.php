@@ -1,12 +1,29 @@
 <?php
-include 'modelinfo.php';
-//check en session si y a rien je met rien sinon je met les info déja mises
-//if ($info exist)
-//{
-	//getters à faire
-	$Places= 3;
-	$Ass = 'checked';
-//}
+$infos = unserialize($_SESSION['infos']);
+var_dump($_POST);
 
-include 'reservation.php';
-	?>
+if (isset($_POST["Destination"])) 
+	{
+		$infos->SetDestination($_POST["Destination"]);
+	}
+if(isset($_POST["Number_of_Places"])) 
+	{
+		$numberPlaces = $_POST["Number_of_Places"];
+		$infos->SetNumberPlaces($numberPlaces);
+	}
+$assurance =  !empty($_POST["Assurance"]);
+$infos->SetAssurance($assurance);
+
+
+
+if($infos->GetDestination() != "")
+{
+	include 'ctrl_info.php';
+}
+else
+{
+	include 'reservation.php';
+}
+
+$_SESSION['infos']= serialize($infos);
+?>

@@ -3,27 +3,24 @@
 class info
 {
 	private $destination = "";
-	private $numbrePlaces = 0;
-	private $assurance = false;
+	private $numberPlaces= 0;
+	private $assurance= "on";
 
-	public function __construct($destination, $numberPlaces, $assurance)
+	public function __construct()
 	{
-		$this->destination = $destination;
-		$this->numberPlaces = $numberPlaces;
-		$this->assurance = $assurance;
 	}
 
-	public function getDestination()
+	public function GetDestination()
 	{
 		return $this->destination;
 	}
 
-	public function getNumberPlaces()
+	public function GetNumberPlaces()
 	{
 		return $this->numberPlaces;
 	}
 
-	public function getassurance()
+	public function Getassurance()
 	{
 		settype($assurance , "integer");
 		return $this->assurance;
@@ -34,7 +31,7 @@ class info
 		$this->destination = $dest;
 	}
 
-	public function SetNumbrePlaces($nbrP)
+	public function SetNumberPlaces($nbrP)
 	{
 		$this->numberPlaces = $nbrP;
 	}
