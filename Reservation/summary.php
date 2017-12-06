@@ -5,7 +5,7 @@
 	<style>
 		table, th, td
 		{
-			border: 1px solid black;
+			width: 15%;
 		}
 	</style>
 	<title>
