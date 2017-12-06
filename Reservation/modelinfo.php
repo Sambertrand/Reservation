@@ -3,8 +3,8 @@
 class info
 {
 	private $destination = "";
-	private $numberPlaces= 0;
-	private $assurance= "on";
+	private $numberPlaces= "";
+	private $assurance= false;
 
 	public function __construct()
 	{
@@ -20,9 +20,8 @@ class info
 		return $this->numberPlaces;
 	}
 
-	public function Getassurance()
+	public function GetAssurance()
 	{
-		settype($assurance , "integer");
 		return $this->assurance;
 	}
 

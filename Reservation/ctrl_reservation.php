@@ -11,9 +11,10 @@ if(isset($_POST["Number_of_Places"]))
 		$numberPlaces = $_POST["Number_of_Places"];
 		$infos->SetNumberPlaces($numberPlaces);
 	}
-$assurance =  !empty($_POST["Assurance"]);
+$assurance = isset($_POST["Assurance"]);
 $infos->SetAssurance($assurance);
 
+$_SESSION['infos']= serialize($infos);
 
 
 if($infos->GetDestination() != "")
@@ -24,6 +25,4 @@ else
 {
 	include 'reservation.php';
 }
-
-$_SESSION['infos']= serialize($infos);
 ?>

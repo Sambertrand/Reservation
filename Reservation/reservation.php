@@ -36,7 +36,7 @@
   			</TR>
   			<TR>
   				<TH> Cancellation assurance</TH>
-  				<TH> <input type="checkbox" name="Assurance" <checked></TH>
+  				<TH> <input type="checkbox" name="Assurance"></TH>
   		</Table>
   		<br>
   		<br>
