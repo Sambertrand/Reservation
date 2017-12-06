@@ -1,9 +1,6 @@
 <?php
-//Alors,  tu dois faire en sort que cette page fonctionne en revoyant summary quand tout les personnes sont crées.
 $listPerson = unserialize($_SESSION['listPerson']);
 $infos = unserialize($_SESSION['infos']);
-var_dump($infos);
-var_dump($listPerson);
 
 $n = count($listPerson);
 $s = intval($infos->GetNumberPlaces());
@@ -23,6 +20,7 @@ else
 		$gotassurance = 1;
 	}
 
+
 	foreach ($listPerson as $person)
 	{
 		if (intval($person->GetAge()) < 12)
@@ -38,9 +36,5 @@ else
 	$totalprice = ($kids*10) + ($adults*15) + ($gotassurance*20);
 	
 	include 'summary.php';
-	foreach ($listPerson as $person)
-	{
-		include 'table1.php';
 	}
-}
 ?>

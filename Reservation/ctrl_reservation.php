@@ -1,6 +1,5 @@
 <?php
 $infos = unserialize($_SESSION['infos']);
-var_dump($_POST);
 
 if (isset($_POST["Destination"])) 
 	{
