@@ -1,0 +1,22 @@
+html,
+body 
+{
+	background-color: beige;
+}
+body
+{
+	font: 100% century gothic,sans-serif;
+	text-align:left
+}
+h1
+{	
+    border: 2px solid black;
+    outline: #6666ff solid 4px;
+    text-align: left;
+}
+
+body
+{
+    margin-left: 45px;
+    margin-top: 45px;
+}
