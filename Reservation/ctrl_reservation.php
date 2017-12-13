@@ -1,18 +1,20 @@
 <?php
 $infos = unserialize($_SESSION['infos']);
-var_dump($infos);
+
 if (isset($_POST["Destination"])) 
 	{
-		$destination = $_POST["Destination"];
-		$infos->SetDestination($destination);
+		$infos->SetDestination($_POST["Destination"]);
 	}
 if(isset($_POST["Number_of_Places"])) 
 	{
-		$numbrePlaces = $_POST["Number_of_Places"];
-		$infos->SetNumbrePlaces($numbrePlaces);
+		$numberPlaces = $_POST["Number_of_Places"];
+		$infos->SetNumberPlaces($numberPlaces);
 	}
-$assurance =  !empty($_POST["Assurance"]);
+$assurance = isset($_POST["Assurance"]);
 $infos->SetAssurance($assurance);
+
+$_SESSION['infos']= serialize($infos);
+
 
 if($infos->GetDestination() != "")
 {
@@ -20,6 +22,6 @@ if($infos->GetDestination() != "")
 }
 else
 {
-include 'reservation.php';
+	include 'reservation.php';
 }
 ?>

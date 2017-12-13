@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>
 		Réservation	
 	</title>
@@ -13,7 +14,7 @@
 		We need the information of every person:
 	</p>
 	<p>
-		Person <?php echo $n?>
+		Person <?php echo count($listPerson) + 1?>
 	</p>
 	<form action="index.php" method= "POST">  		
   		<Table>
@@ -35,7 +36,7 @@
   		<br>
 	  	<input type="submit" value="Next step"/> 
 	   	<!-- <input type="submit" value="annuler la réservation"/> -->
-		<input type= "hidden"  name="page" value="ctrl_info">
+		<input type= "hidden"  name="page" value="ctrl_person">
 	</form>
 </body>
 </html>
