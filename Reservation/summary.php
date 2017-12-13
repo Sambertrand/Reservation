@@ -17,7 +17,7 @@
 		<b>RESERVATION</b>
 	</h1>
 	<p>
-		The total price is <?php echo $totalprice ?>$
+		The total price is $<?php echo $totalprice ?>
 	</p>
 	<p>
 		You are going to <?php echo $infos->GetDestination() ?>
@@ -50,8 +50,11 @@
 	<br>
 	<form action="index.php" method= "POST"> 
 		<input type="submit" value="Confirm"/> 
-		<!-- <input type="submit" value="annuler la réservation"/> -->
-		<input type= "hidden"  name="page" value="Confirmation">
+		<input type= "hidden"  name="page" value="ctrl_Confirmation">
+	</form>
+	<form action="index.php" method= "POST">
+		<input type="submit" value="delete reservation and go back home"/>
+		<input type= "hidden"  name="page" value="destroyer">
 	</form>
 </body>
 </html>

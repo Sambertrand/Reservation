@@ -1,8 +1,28 @@
 <?php
+require_once('modelperson.php');
 $listPerson = unserialize($_SESSION['listPerson']);
 $infos = unserialize($_SESSION['infos']);
-
 $n = count($listPerson);
+
+
+if (isset($_POST["backIsSet"]))
+{
+	if ($backIsSet == 0)
+	{
+		$person = new Person();
+	}
+	else
+	{
+		$n = $backIsSet - 1;
+		$person = $listPerson[$n];
+	}
+
+} 
+else
+{
+	$person = new Person();
+}
+	
 $s = intval($infos->GetNumberPlaces());
 
 if ($n < $s)
@@ -34,7 +54,8 @@ else
 
 	}	
 	$totalprice = ($kids*10) + ($adults*15) + ($gotassurance*20);
-	
+	$_SESSION['totalprice']= serialize($totalprice);
+
 	include 'summary.php';
 	}
 ?>

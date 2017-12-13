@@ -2,7 +2,7 @@
 require_once('modelperson.php');
 
 $listPerson = unserialize($_SESSION['listPerson']);
-$person = new Person();
+$person = $person = new Person();
 
 if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && $_POST["Age"] != "")
 {
@@ -10,15 +10,14 @@ if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && $_POST["Age"] !=
 	$person->SetFirstName($firstName);
 	$lastName = $_POST["Last_Name"];
 	$person->SetLastName($lastName);
-	$age = $_POST["Age"];
-	
+	$age = $_POST["Age"];	
 	$person->SetAge($age);
 	$x = count($listPerson) + 1;
 	$listPerson[$x] = $person; 
 }
 else
 {
-	echo 'ERROR';
+	echo 'set all';
 }
 
 $_SESSION['listPerson']= serialize($listPerson);

@@ -11,11 +11,11 @@
 		<b>RESERVATION</b>
 	</h1>
 	<p>
-		Reservartion confirmed.
+		Reservartion confirmed for $<?php echo $totalprice ?>
 	</p>
 	<form action="index.php" method= "POST"> 
 		<input type="submit" value="Back to home"/> 
-		<input type= "hidden"  name="page" value="">
+		<input type= "hidden"  name="page" value="destroyer">
 	</form>
 </body>
 </html>
