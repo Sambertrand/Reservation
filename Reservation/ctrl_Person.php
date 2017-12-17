@@ -2,7 +2,8 @@
 require_once('modelperson.php');
 $pointer = unserialize($_SESSION['pointer']);
 $listPerson = unserialize($_SESSION['listPerson']);
-$person = $person = new Person();
+$person = new Person();
+$back = false;
 
 if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && is_numeric($_POST["Age"]))
 {
@@ -12,8 +13,9 @@ if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && is_numeric($_POS
 	$person->SetLastName($lastName);
 	$age = $_POST["Age"];	
 	$person->SetAge($age);
-	$pointer = $pointer + 1;
 	$listPerson[$pointer] = $person; 
+	$pointer = $pointer + 1;
+	unset($person);
 }
 else
 {
@@ -21,7 +23,6 @@ else
 }
 
 $_SESSION['listPerson']= serialize($listPerson);
-$_SESSION['Person']= serialize($person);
 
 include 'ctrl_info.php';
 ?>

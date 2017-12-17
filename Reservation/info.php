@@ -14,22 +14,22 @@
 		We need the information of every person:
 	</p>
 	<p>
-		Person <?php echo $pointer + 1?>
+		Person <?php echo $pointer?>
 	</p>
 	<form action="index.php" method= "POST">  		
   		<Table>
   			<caption> Reservation form: </caption>
   			<TR>
   				<TH> First Name: </TH>
-  				<TH> <input type="text" name="First_Name" value="<?php $person->GetFirstName() ?>"> </TH>
+  				<TH> <input type="text" name="First_Name" value="<?php echo $person->GetFirstName() ?>"> </TH>
 			</TR>
 			<TR>
   				<TH> Last Name: </TH>
-  				<TH> <input type="text" name="Last_Name" value="<?php $person->GetLastName() ?>"> </TH>
+  				<TH> <input type="text" name="Last_Name" value="<?php echo $person->GetLastName() ?>"> </TH>
 			</TR>
 			<TR>
 				<TH>Age: </TH>
-				<TH> <input type="text" name="Age" value="<?php $person->GetAge()?>"> </TH>
+				<TH> <input type="text" name="Age" value="<?php echo $person->GetAge()?>"> </TH>
   			</TR>
   		</Table>
   		<br>

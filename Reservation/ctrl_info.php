@@ -3,22 +3,26 @@ require_once('modelperson.php');
 $listPerson = unserialize($_SESSION['listPerson']);
 $infos = unserialize($_SESSION['infos']);
 
-if (isset($person))
+if (!isset($pointer))
 {
-	$person = $listPerson[$pointer];
-}
-else
-{
-	$pointer = 0;
-	$person = new Person();
+	$back = false;
+	$pointer = 1;
 }
 
 $_SESSION['pointer']= serialize($pointer);
 	
 $s = intval($infos->GetNumberPlaces());
 
-if ($pointer < $s)
+if ($pointer <= $s)
 {
+	if($back)
+	{
+		$person = $listPerson[$pointer];
+	}
+	else
+	{
+		$person = new Person();
+	}
 	include 'info.php';
 }
 else
@@ -60,6 +64,7 @@ else
 	else
 	{
 		echo'at least one person has to be over 18';
+		unset($person); 
 		include 'ctrl_back.php';
 
 	}
