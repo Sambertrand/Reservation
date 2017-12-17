@@ -1,49 +1,35 @@
 <?php
 $infos = unserialize($_SESSION['infos']);
-$backIsSet = 0;
-var_dump($_POST);
+$numberPlaces = 0;
 
-if(isset($_POST["backIsSet"]))
-{
-	$backIsSet = intval($_POST["backIsSet"]);
-}
 if (isset($_POST["Destination"])) 
 	{
 		$infos->SetDestination($_POST["Destination"]);
 	}
-if(isset($_POST["Number_of_Places"])) 
+if(isset($_POST["Number_of_Places"]) && (1 <= intval($_POST["Number_of_Places"])) && (intval($_POST["Number_of_Places"]) <= 10)) 
 	{
 		$numberPlaces = $_POST["Number_of_Places"];
 		$infos->SetNumberPlaces($numberPlaces);
 	}
+else
+{
+	if (isset($_POST["Number_of_Places"]))
+	{
+		echo' choose between 1 and 10 places';
+	}
+
+}
 $infos->SetAssurance(isset($_POST["Assurance"]));
 
 $_SESSION['infos']= serialize($infos);
 
-if ($backIsSet == 0)
+if($infos->GetDestination() != "" && intval($numberPlaces) != 0)
 {
-	if($infos->GetDestination() != "")
-	{
-		include 'ctrl_info.php';
-	}
-	else
-	{
-		include 'reservation.php';
-	}
-
+	include 'ctrl_info.php';
 }
 else
 {
-
-	if($backIsSet == 1)
-	{
-		include'reservation.php';
-	}
-	else
-	{
-		include 'ctrl_info.php';
-	}
-
+	include 'reservation.php';
 }
 
 ?>

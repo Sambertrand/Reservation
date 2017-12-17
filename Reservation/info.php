@@ -14,7 +14,7 @@
 		We need the information of every person:
 	</p>
 	<p>
-		Person <?php echo $n + 1?>
+		Person <?php echo $pointer + 1?>
 	</p>
 	<form action="index.php" method= "POST">  		
   		<Table>
@@ -39,8 +39,7 @@
 	</form>	
 	<form action="index.php" method= "POST">
 		<input type="submit" value="back">
-		<input type= "hidden"  name="page" value="ctrl_reservation">
-		<input type= "hidden"  name="backIsSet" value="<?php count($listPerson) ?>">
+		<input type= "hidden"  name="page" value="ctrl_back">
 	</form>
 	<form action="index.php" method= "POST">
 		<input type="submit" value="delete reservation and go back home">

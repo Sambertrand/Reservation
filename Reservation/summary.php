@@ -5,7 +5,7 @@
 	<style>
 		table, th, td
 		{
-			width: 15%;
+			width: 220px;
 		}
 	</style>
 	<title>
@@ -39,7 +39,7 @@
 	</p>
 	<?php
 	$i = 1;
-	while ($i <= $n)
+	while ($i <= count($listPerson))
 	{
 		$person = $listPerson[$i];
 		include 'table1.php';
@@ -51,6 +51,10 @@
 	<form action="index.php" method= "POST"> 
 		<input type="submit" value="Confirm"/> 
 		<input type= "hidden"  name="page" value="ctrl_Confirmation">
+	</form>
+	<form action="index.php" method= "POST">
+		<input type="submit" value="back">
+		<input type= "hidden"  name="page" value="ctrl_back">
 	</form>
 	<form action="index.php" method= "POST">
 		<input type="submit" value="delete reservation and go back home"/>

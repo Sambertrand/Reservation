@@ -10,10 +10,11 @@ body
 }
 h1
 {	
-	width: 15%;
+	width: 220px;
     border: 2px solid black;
     outline: #6666ff solid 4px;
     text-align: center;
+
 }
 
 body
