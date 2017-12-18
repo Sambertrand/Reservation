@@ -1,1 +1,0 @@
-tabelau des gens 
