@@ -3,6 +3,7 @@ require_once('modelperson.php');
 $listPerson = unserialize($_SESSION['listPerson']);
 $infos = unserialize($_SESSION['infos']);
 
+
 //set ups the pointer
 //the pointer points to whichpassenger we are at (+1 when going forward, -1 when going backwards)
 if (!isset($pointer))
@@ -13,7 +14,7 @@ if (!isset($pointer))
 
 $_SESSION['pointer']= serialize($pointer);
 
-//continues showing the info view while the pointer isn't at the number of places needed
+//continues showing the info view while the pointer isn't at the number of places needed	
 if ($pointer <= intval($infos->GetNumberPlaces()))
 {
 	if($back)
@@ -22,6 +23,7 @@ if ($pointer <= intval($infos->GetNumberPlaces()))
 	}
 	else
 	{
+
 		if(isset($listPerson[$pointer]))
 		{
 			$person = $listPerson[$pointer];
@@ -72,6 +74,7 @@ else
 		include 'summary.php';
 	}
 	//no adult,  it goes back
+
 	else
 	{
 		echo'at least one person has to be over 18';

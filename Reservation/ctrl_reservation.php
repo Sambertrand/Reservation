@@ -2,6 +2,7 @@
 $infos = unserialize($_SESSION['infos']);
 $numberPlaces = 0;
 
+
 //first controller ckecks for an already posted info
 if (isset($_POST["Destination"])) 
 	{
@@ -24,6 +25,7 @@ $infos->SetAssurance(isset($_POST["Assurance"]));
 
 $_SESSION['infos']= serialize($infos);
 
+
 //if the form is completed correctly it includes ctrl_info
 if($infos->GetDestination() != "" && intval($numberPlaces) != 0)
 {
@@ -31,7 +33,6 @@ if($infos->GetDestination() != "" && intval($numberPlaces) != 0)
 }
 else
 {
-	//vieuw
 	include 'reservation.php';
 }
 ?>
