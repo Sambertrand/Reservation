@@ -1,6 +1,7 @@
 <?php
 $infos = unserialize($_SESSION['infos']);
 $numberPlaces = 0;
+var_dump($infos->GetAssurance());
 
 
 //first controller ckecks for an already posted info

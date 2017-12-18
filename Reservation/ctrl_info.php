@@ -69,8 +69,10 @@ else
 	}	
 	$totalprice = ($kids*10) + ($adults*15) + ($gotassurance*20);
 	$_SESSION['totalprice']= serialize($totalprice);
+	$_SESSION['listPerson']= serialize($listPerson);
 	if ($adultcheck)
 	{
+
 		include 'summary.php';
 	}
 	//no adult,  it goes back
