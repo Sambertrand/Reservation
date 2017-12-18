@@ -9,8 +9,8 @@ class Person
 	public function __construct()
 	{
 		$this->firstName = "";
-		$this->lastName = 0;
-		$this->age = 0;
+		$this->lastName = "";
+		$this->age;
 	}
 
 	public function GetFirstName()

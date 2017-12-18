@@ -1,10 +1,12 @@
 <?php
+//modifies the new person wghen next is clicked on the info
 require_once('modelperson.php');
-
+$pointer = unserialize($_SESSION['pointer']);
 $listPerson = unserialize($_SESSION['listPerson']);
-$person = $person = new Person();
+$person = new Person();
+$back = false;
 
-if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && $_POST["Age"] != "")
+if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && is_numeric($_POST["Age"]))
 {
 	$firstName = $_POST["First_Name"];
 	$person->SetFirstName($firstName);
@@ -12,12 +14,14 @@ if ( $_POST["First_Name"] != "" && $_POST["Last_Name"] != "" && $_POST["Age"] !=
 	$person->SetLastName($lastName);
 	$age = $_POST["Age"];	
 	$person->SetAge($age);
-	$x = count($listPerson) + 1;
-	$listPerson[$x] = $person; 
+	$listPerson[$pointer] = $person; 
+	$pointer = $pointer + 1;
+	unset($person);
 }
+//ckecks for errors
 else
 {
-	echo 'set all';
+	echo 'set all corectly (Age has to be a number)';
 }
 
 $_SESSION['listPerson']= serialize($listPerson);

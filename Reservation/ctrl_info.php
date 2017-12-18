@@ -2,37 +2,44 @@
 require_once('modelperson.php');
 $listPerson = unserialize($_SESSION['listPerson']);
 $infos = unserialize($_SESSION['infos']);
-$n = count($listPerson);
 
-
-if (isset($_POST["backIsSet"]))
+//set ups the pointer
+//the pointer points to whichpassenger we are at (+1 when going forward, -1 when going backwards)
+if (!isset($pointer))
 {
-	if ($backIsSet == 0)
+	$back = false;
+	$pointer = 1;
+}
+
+$_SESSION['pointer']= serialize($pointer);
+
+//continues showing the info view while the pointer isn't at the number of places needed
+if ($pointer <= intval($infos->GetNumberPlaces()))
+{
+	if($back)
 	{
-		$person = new Person();
+		$person = $listPerson[$pointer];
 	}
 	else
 	{
-		$n = $backIsSet - 1;
-		$person = $listPerson[$n];
+		if(isset($listPerson[$pointer]))
+		{
+			$person = $listPerson[$pointer];
+		}
+		else
+		{
+			$person = new Person();
+		}
 	}
-
-} 
-else
-{
-	$person = new Person();
-}
-	
-$s = intval($infos->GetNumberPlaces());
-
-if ($n < $s)
-{
 	include 'info.php';
 }
+//when the number of places reached it calculated thde totalprice
+//checks if there is an adult and shows the summary
 else
-{
+	{
 	$kids = 0 ;
 	$adults = 0 ;
+	$adultcheck = false;
 	$gotassurance = 0;
 
 	if ($infos->GetAssurance())
@@ -43,6 +50,11 @@ else
 
 	foreach ($listPerson as $person)
 	{
+		if (intval($person->GetAge()) >= 18)
+		{
+			$adultcheck = true;
+		}
+
 		if (intval($person->GetAge()) < 12)
 			{
 				$kids = $kids + 1;
@@ -55,7 +67,18 @@ else
 	}	
 	$totalprice = ($kids*10) + ($adults*15) + ($gotassurance*20);
 	$_SESSION['totalprice']= serialize($totalprice);
+	if ($adultcheck)
+	{
+		include 'summary.php';
+	}
+	//no adult,  it goes back
+	else
+	{
+		echo'at least one person has to be over 18';
+		unset($person); 
+		include 'ctrl_back.php';
 
-	include 'summary.php';
+	}
+	
 	}
 ?>
