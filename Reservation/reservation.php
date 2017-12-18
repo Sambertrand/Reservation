@@ -49,5 +49,9 @@
 		<input type="submit" value="delete reservation and go back home">
 		<input type= "hidden"  name="page" value="destroyer">
 	</form>
+	<form action="index.php" method= "POST">
+		<input type="submit" value="admin only">
+		<input type= "hidden"  name="page" value="ctrl_admin">
+	</form>
 </body>
 </html>

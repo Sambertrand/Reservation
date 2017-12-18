@@ -18,6 +18,7 @@ if ($connection->connect_error)
     die("Connection failed: " . $connection->connect_error);
 } 
 
+//inserting in the data base 
 $destination = $infos->GetDestination();
 $Nplaces = $infos->GetNumberPlaces();
 $assurancecCheck = $infos->GetAssurance();
@@ -42,8 +43,8 @@ foreach ($listPerson as $Person)
 	        VALUES ('" . $id_infos. "','" .  $lastname . "','". $firstname . "','". $age . "')";
 	$connection->query($add);
 }
+//closing conection
+$connection->close();
 
-    $connection->close();
-
- include 'confirmation.php'
+include 'confirmation.php'
 ?>
