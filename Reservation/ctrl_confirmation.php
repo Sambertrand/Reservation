@@ -22,11 +22,11 @@ if ($connection->connect_error)
 $destination = $infos->GetDestination();
 $Nplaces = $infos->GetNumberPlaces();
 $assurancecCheck = $infos->GetAssurance();
-$assurance = "Non";
+$assurance = "No";
 
 if($assurancecCheck)
 {
-	$assurance = "Oui";
+	$assurance = "Yes";
 }
 
 $add ="INSERT INTO infos (Destination, Places, Price, Assurance)

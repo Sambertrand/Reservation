@@ -21,7 +21,7 @@
         <?php echo $display ?>
 
         <form method='post' action='index.php'>
-            <input type='hidden' name='page' value='controller_reserv'/>								
+            <input type='hidden' name='page' value='ctrl_back.php'/>								
 			<input type='submit' class="btn btn-secondary btn-sm" value='Retour'/>
         </form>
     </doby>

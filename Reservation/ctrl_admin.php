@@ -50,17 +50,17 @@ while ($line=$result->fetch_assoc())
             $display .= "<td>" . $col_value . "</td>";
         }
         $display .= "<td>";
-        $display .= "<form method='post' action='index.php'>";
-        $display .= "<input type='hidden' name='page' value='controller_displaydatabd'/>";
-        $display .= "<input type='hidden' name='VolID' value='".$line['id']."'/>";
-        $display .= "<input type='submit' class='btn btn-primary  btn-sm' value='Modifier'/>";
+        $display .= "<form method='POST' action='index.php'>";
+        $display .= "<input type='hidden' name='page' value='ctrl_edit'/>";
+        $display .= "<input type='hidden' name='ID' value='".$line['id']."'/>";
+        $display .= "<input type='submit' value='Edit'/>";
         $display .= "</form>";
         $display .= "</td>";
         $display .= "<td>";
-        $display .= "<form method='post' action='index.php'>";
-        $display .= "<input type='hidden' name='page' value='controller_suppdatadb'/>";
-        $display .= "<input type='hidden' name='VolID' value='".$line['id']."'/>";
-        $display .= "<input type='submit' class='btn btn-primary  btn-sm' value='Supprimer'/>";
+        $display .= "<form method='POST' action='index.php'>";
+        $display .= "<input type='hidden' name='page' value='ctrl_delete'/>";
+        $display .= "<input type='hidden' name='ID' value='".$line['id']."'/>";
+        $display .= "<input type='submit' class='btn btn-primary  btn-sm' value='Delete'/>";
         $display .= "</form>";
         $display .= "</td>";
         $display .= "</tr>";
