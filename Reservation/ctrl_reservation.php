@@ -1,9 +1,9 @@
 <?php
+//first controller ckecks for an already posted info
 $infos = unserialize($_SESSION['infos']);
 $numberPlaces = 0;
 
 
-//first controller ckecks for an already posted info
 if (isset($_POST["Destination"])) 
 	{
 		$infos->SetDestination($_POST["Destination"]);

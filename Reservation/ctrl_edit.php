@@ -1,4 +1,6 @@
 <?php
+//makes a whole new reservation and deletes the old one
+//initalizing the variables
 require_once('modelperson.php');
 require_once('modelinfo.php');
 $infos = unserialize($_SESSION['infos']);
@@ -16,7 +18,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "reservation";
-$conn = new mysqli($servername, $username, $password, $dbname);
+$connection = new mysqli($servername, $username, $password, $dbname);
 
 
 $sql = "SELECT infos.Destination, infos.Places, infos.Price, infos.Assurance, infos.id, 
@@ -25,10 +27,10 @@ $sql = "SELECT infos.Destination, infos.Places, infos.Price, infos.Assurance, in
         INNER JOIN persons 
         WHERE persons.id_infos = infos.id && persons.id_infos = $ID";
 
-$toModify = $conn->query($sql);
+$toModify = $connection->query($sql);
 
 
-// initializing the informations
+//completeting the informations
 $i=1;
 while ($row = $toModify->fetch_assoc())
 {
@@ -56,10 +58,10 @@ $_SESSION['totalprice']= serialize($totalprice);
 $_SESSION['listPerson']= serialize($listPerson);
 $_SESSION['pointer']= serialize($pointer);
 
-//deleting after setting up the changemens to not have double informations
+//deleting after setting up the changements to not have double informations
 $sql = "DELETE FROM infos WHERE id=$ID";
-$conn->query($sql);
-$conn->close();
+$connection->query($sql);
+$connection->close();
 
 //showing summary to modify by using back
 include 'summary.php'

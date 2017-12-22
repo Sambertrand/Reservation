@@ -13,7 +13,7 @@ if (!isset($pointer))
 
 $_SESSION['pointer']= serialize($pointer);
 
-//continues showing the info view while the pointer isn't at the number of places needed	
+//continues showing the info view while the pointer is not at the number of places needed
 if ($pointer <= intval($infos->GetNumberPlaces()))
 {
 	echo $pointer;
@@ -35,8 +35,7 @@ if ($pointer <= intval($infos->GetNumberPlaces()))
 	}
 	include 'info.php';
 }
-//when the number of places reached it calculated thde totalprice
-//checks if there is an adult and shows the summary
+//when the number of places reached it calculated the totalprice
 else
 	{
 	$kids = 0 ;
@@ -70,13 +69,15 @@ else
 	$totalprice = ($kids*10) + ($adults*15) + ($gotassurance*20);
 	$_SESSION['totalprice']= serialize($totalprice);
 	$_SESSION['listPerson']= serialize($listPerson);
+
+	//checks if there is an adult and shows the summary
 	if ($adultcheck)
 	{
 
 		include 'summary.php';
 	}
 	
-	//no adult,  it goes back
+	//no adult -> it goes back
 	else
 	{
 		echo'at least one person has to be over 18';

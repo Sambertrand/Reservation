@@ -1,5 +1,5 @@
 <?php
-
+//info object
 class info
 {
 	private $destination = "";

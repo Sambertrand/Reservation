@@ -1,5 +1,5 @@
 <?php
-
+//Person object
 class Person
 {
 	private $firstName;

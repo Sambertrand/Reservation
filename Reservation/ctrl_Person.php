@@ -1,5 +1,5 @@
 <?php
-//modifies the new person wghen next is clicked on the info
+//modifies the new person when next is clicked on the info page
 require_once('modelperson.php');
 $pointer = unserialize($_SESSION['pointer']);
 $listPerson = unserialize($_SESSION['listPerson']);

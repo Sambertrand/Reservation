@@ -1,5 +1,5 @@
 <?php 
-//adding stuff to the database
+//adding information to the database
 require_once('modelperson.php');
 $totalprice = unserialize($_SESSION['totalprice']); 
 $listPerson = unserialize($_SESSION['listPerson']);
