@@ -16,7 +16,6 @@ $_SESSION['pointer']= serialize($pointer);
 //continues showing the info view while the pointer is not at the number of places needed
 if ($pointer <= intval($infos->GetNumberPlaces()))
 {
-	echo $pointer;
 	if($back)
 	{
 		$person = $listPerson[$pointer];
