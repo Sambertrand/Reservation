@@ -22,7 +22,7 @@
 
         <form method='post' action='index.php'>
             <input type='hidden' name='page' value='ctrl_back.php'/>								
-			<input type='submit' class="btn btn-secondary btn-sm" value='Retour'/>
+			<input type='submit' class="btn btn-secondary btn-sm" value='Back'/>
         </form>
     </doby>
 </html>
